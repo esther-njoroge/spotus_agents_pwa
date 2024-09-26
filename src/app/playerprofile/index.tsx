@@ -28,7 +28,8 @@ export default function PlayerProfilePage() {
 // Sidebar component
 function Sidebar() {
   return (
-    <aside className="w-64 bg-blue-600 text-white p-6">
+    <aside className="w-[16%] bg-[#177BBD] text-white p-6">
+      
       <div>
         <img src="" alt="" />
       </div>
@@ -55,6 +56,8 @@ function Sidebar() {
   )
 }
 
+
+
 // PlayerProfile component
 function PlayerProfile() {
   return (
@@ -73,7 +76,7 @@ function PlayerProfile() {
       </div>
       <div className="ml-6">
         <h2 className="text-2xl font-bold">James Doe</h2>
-        <p className="text-gray-600">Mphavu</p>
+        <p className="text-black text-[20px]">Mphavu</p>
       </div>
       <div className="ml-auto">
         <img
@@ -89,7 +92,7 @@ function PlayerProfile() {
 // PlayerStats component
 function PlayerStats() {
   const stats = [
-    { label: 'Shooting Accuracy', value: 97 },
+    { label: 'Shooting Accuracy', value: 97},
     { label: 'Shooting Angle', value: 82 },
     { label: 'Assists', value: 5, max: 10 },
     { label: 'Shots on target', value: 2, max: 10 },
@@ -113,7 +116,7 @@ function PlayerStats() {
               })}
             />
           </div>
-          <p className="text-gray-600">{stat.label}</p>
+          <p className="text-black text-bold mb-[20%]">{stat.label}</p>
         </div>
       ))}
     </div>

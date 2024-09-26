@@ -135,10 +135,11 @@ import Link from 'next/link'
 export default function Teams() {
   // Sidebar Component
   const Sidebar = () => (
-    <aside className="w-64 bg-blue-600 text-white p-6">
+    <aside className="w-[16%] bg-[#177BBD] text-white p-6">
       <div className="text-2xl font-bold mb-10">
         <img src="images/logo.png" alt="" />
       </div>
+     
       {/* <nav>
         <ul>
           <li className="mb-4">
@@ -168,35 +169,46 @@ export default function Teams() {
       { name: 'Kelly', position: 'Striker', team: 'Kikwetu' },
       { name: 'John', position: 'Midfielder', team: 'Kikwetu' },
       { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
-      // Add more players as needed
+      { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
+      { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
+      { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
+      { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
+      { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
+      { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
+      { name: 'Chris', position: 'Defender', team: 'Kikwetu' },
+    
     ]
 
     return (
-      <div>
-        <h2 className="text-2xl font-bold mb-4 text-blue-600 text-center">Kikwetu</h2>
+      <div className='ml-[5%]'>
+        <h2 className="text-[40px] font-bold mb-4 text-[#177BBD] text-center">Kikwetu</h2>
         <table className="w-full">
           <thead>
-            <tr className="bg-blue-600 text-white">
-              <th className="p-2 text-left">Profile</th>
-              <th className="p-2 text-left">Name</th>
-              <th className="p-2 text-left">Position</th>
-              <th className="p-2 text-left">Team</th>
+            {/* <tr className="bg-[#177BBD] text-black"> */}
+            <tr className="text-black ml-[8%]">
+            <tr className='border-3 border-black ml-[8%]'></tr>  
+
+              <th className="p-4 text-left text-[24px]">Profile</th>
+              <th className="p-2 text-left text-[24px]">Name</th>
+              <th className="p-2 text-left text-[24px]">Position</th>
+              <th className="p-2 text-left text-[24px]">Team</th>
               <th className="p-2"></th>
             </tr>
           </thead>
           <tbody>
             {players.map((player, index) => (
-              <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}>
-                <td className="p-2">
-                  <div className="w-8 h-8 bg-gray-300 rounded-full">
-                    <img src="images/player.png" alt="" />
+              <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-200'}>
+                <td className="p-2 ml-[8%]">
+                  
+                  <div className="w-12 h-12 bg-gray-300 rounded-full ml-[5%]">
+                    <img src="images/player.png" alt="profile" className='' />
                   </div>
                 </td>
-                <td className="p-2">{player.name}</td>
-                <td className="p-2">{player.position}</td>
-                <td className="p-2">{player.team}</td>
-                <td className="p-2">
-                  <button className="bg-green-500 text-white px-4 py-1 rounded">View</button>
+                <td className="p-5 font-medium text-[18px]">{player.name}</td>
+                <td className="p-2 font-medium text-[18px]">{player.position}</td>
+                <td className="p-2 font-medium text-[18px]">{player.team}</td>
+                <td className="p-2 ml-[5%]">
+                <button className="bg-[#46BC14] text-white px-8 py-1 rounded-[15px] h-[40px] font-medium text-[18px] ml-[8%]">View</button>
                 </td>
               </tr>
             ))}
@@ -218,16 +230,8 @@ export default function Teams() {
 
       <main className="flex-1 p-10">
         <div className="mb-6">
-        <input
-            type="text"
-            placeholder="Search"
-            className="w-[40%] p-2 border rounded-[23px] border-black ml-3"
-          />
-          {/* <input
-            type="text"
-            placeholder="Search"
-            className="w-full p-2 border rounded-md"
-          /> */}
+        <input type="text" placeholder='search' className='w-[40%] p-2 border rounded-[18px] border-black ml-[50px]'/>
+  
         </div>
         <TeamList />
       </main>

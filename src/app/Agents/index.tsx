@@ -66,6 +66,8 @@
 
 
 
+
+
 // import '../styles/globals.css'
 // import Layout from '../components/Layout'
 
@@ -187,121 +189,254 @@
 // }
 
 
-import Head from 'next/head'
-import Link from 'next/link'
 
-export default function Home() {
-  // Sidebar Component
-  const Sidebar = () => (
-    <aside className="w-64 bg-blue-600 text-white p-6">
-      {/* <div className="text-2xl font-bold mb-10">Spot Us</div> */}
-      <div>
-        <img src="images/logo.png" alt="" />
-      </div>
 
-      {/* <nav>
-        <ul>
-          <li className="mb-4">
-            <Link href="/" className="flex items-center">
-              <span className="mr-2">🏠</span> Home
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link href="/teams" className="flex items-center">
-              <span className="mr-2">👥</span> Teams
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link href="/scouting" className="flex items-center">
-              <span className="mr-2">⚖️</span> Scouting Comparison
-            </Link>
-          </li>
-        </ul>
-      </nav> */}
-    </aside>
-  )
 
-  // TopPlayers Component
-  const TopPlayers = () => {
-    const players = [
-      { name: 'James Doe', position: 'Best striker', team: 'Mphavu' },
-      { name: 'John Smith', position: 'Midfielder', team: 'Mphavu' },
-      { name: 'Chris Oti', position: 'Defender', team: 'Mphavu' },
-    ]
+// import Head from 'next/head'
+// import Link from 'next/link'
 
-    return (
-      <div className="mb-10  ml-3">
-        <h2 className="text-xl font-bold mb-4 text-sky-500 mt-[7%] ml-3">Top Players</h2>
-        <div className="flex space-x-24 ml-5">
-          {players.map((player, index) => (
-            <div key={index} className="bg-white p-8 w-[25%] h-[60%] rounded-lg shadow flex items-center">
-              <div className="w-12 h-12 bg-gray-300 rounded-full mr-4">
-                <img src="images/player.png" alt="player" />
-              </div>
-              <div>
-                <div className="font-bold">{player.name}</div>
-                <div className="text-sm text-black font-semibold">{player.position}</div>
-                <div className="text-sm text-black font-semibold">{player.team}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
+// export default function Home() {
+//   // Sidebar Component
+//   const Sidebar = () => (
+//     <aside className="w-64 bg-blue-600 text-white p-6">
+//       {/* <div className="text-2xl font-bold mb-10">Spot Us</div> */}
+//       <div>
+//         <img src="images/logo.png" alt="" />
+//       </div>
 
-  // AvailableTeams Component
-  const AvailableTeams = () => {
-    const teams = [
-      { name: 'Ligi Ndogo FC', players: 34, location: 'Ngong Road' },
-      { name: 'Mphavu FC', players: 28, location: 'Kilimani' },
-      { name: 'Ngong Warriors', players: 22, location: 'Ngong Town' },
-      { name: 'Ridgeways FC', players: 30, location: 'Ridgeways' },
-    ]
+//       {/* <nav>
+//         <ul>
+//           <li className="mb-4">
+//             <Link href="/" className="flex items-center">
+//               <span className="mr-2">🏠</span> Home
+//             </Link>
+//           </li>
+//           <li className="mb-4">
+//             <Link href="/teams" className="flex items-center">
+//               <span className="mr-2">👥</span> Teams
+//             </Link>
+//           </li>
+//           <li className="mb-4">
+//             <Link href="/scouting" className="flex items-center">
+//               <span className="mr-2">⚖️</span> Scouting Comparison
+//             </Link>
+//           </li>
+//         </ul>
+//       </nav> */}
+//     </aside>
+//   )
 
-    return (
-      <div>
-        <h2 className="text-xl font-bold mb-4 text-sky-500  mt-[10%] ml-3">Available Teams</h2>
-        <div className="grid grid-cols-4 gap-4 ml-3 border-[2px]">
-          {teams.map((team, index) => (
-            <div key={index} className="bg-white p-4 rounded-lg shadow">
-              <div className="w-16 h-16 bg-gray-300 rounded-full mb-4 mx-auto">
-                <img src="images/team.png" alt="team" className=''/>
-              </div>
-              <div className="text-center">
-                <div className="font-bold">{team.name}</div>
-                <div className="text-sm text-black">{team.players} Players available</div>
-                <div className="text-sm text-black">{team.location}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
+//   // TopPlayers Component
+//   const TopPlayers = () => {
+//     const players = [
+//       { name: 'James Doe', position: 'Best striker', team: 'Mphavu' },
+//       { name: 'John Smith', position: 'Midfielder', team: 'Mphavu' },
+//       { name: 'Chris Oti', position: 'Defender', team: 'Mphavu' },
+//     ]
 
-  // Main Home Component
+//     return (
+//       <div className="mb-10  ml-3">
+//         <h2 className="text-xl font-bold mb-4 text-sky-500 mt-[7%] ml-3">Top Players</h2>
+//         <div className="flex space-x-24 ml-5">
+//           {players.map((player, index) => (
+//             <div key={index} className="bg-white p-8 w-[25%] h-[60%] rounded-lg shadow flex items-center">
+//               <div className="w-12 h-12 bg-gray-300 rounded-full mr-4">
+//                 <img src="images/player.png" alt="player" />
+//               </div>
+//               <div>
+//                 <div className="font-bold">{player.name}</div>
+//                 <div className="text-sm text-black font-semibold">{player.position}</div>
+//                 <div className="text-sm text-black font-semibold">{player.team}</div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     )
+//   }
+
+//   // AvailableTeams Component
+//   const AvailableTeams = () => {
+//     const teams = [
+//       { name: 'Ligi Ndogo FC', players: 34, location: 'Ngong Road' },
+//       { name: 'Mphavu FC', players: 28, location: 'Kilimani' },
+//       { name: 'Ngong Warriors', players: 22, location: 'Ngong Town' },
+//       { name: 'Ridgeways FC', players: 30, location: 'Ridgeways' },
+//     ]
+
+//     return (
+//       <div>
+//         <h2 className="text-xl font-bold mb-4 text-sky-500  mt-[10%] ml-3">Available Teams</h2>
+//         <div className="grid grid-cols-4 gap-4 ml-3 border-[2px]">
+//           {teams.map((team, index) => (
+//             <div key={index} className="bg-white p-4 rounded-lg shadow">
+//               <div className="w-16 h-16 bg-gray-300 rounded-full mb-4 mx-auto">
+//                 <img src="images/team.png" alt="team" className=''/>
+//               </div>
+//               <div className="text-center">
+//                 <div className="font-bold">{team.name}</div>
+//                 <div className="text-sm text-black">{team.players} Players available</div>
+//                 <div className="text-sm text-black">{team.location}</div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     )
+//   }
+
+//   // Main Home Component
+//   return (
+//     <div className="flex h-screen bg-gray-100">
+//       <Head>
+//         <title>Spot Us</title>
+//         <link rel="icon" href="/favicon.ico" />
+//       </Head>
+
+//       <Sidebar />
+
+//       <main className="flex-1 p-10">
+//         <h1 className="text-3xl font-bold mb-6 text-sky-500 ml-3">Welcome back</h1>
+//         <div className="mb-6">
+//           <input
+//             type="text"
+//             placeholder="Search"
+//             className="w-[40%] p-2 border rounded-[23px] border-black ml-3"
+//           />
+//         </div>
+//         <TopPlayers />
+//         <AvailableTeams />
+//       </main>
+//     </div>
+//   )
+// }
+
+
+
+
+import React from 'react';
+
+const Dashboard = () => {
   return (
-    <div className="flex h-screen bg-gray-100">
-      <Head>
-        <title>Spot Us</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div style={{ display: 'flex', height: '100vh' }}>
+      {/* Sidebar */}
+      <nav style={{
+        width: '16%',
+        backgroundColor: '#177BBD',
+        color: 'white',
+        padding: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}>
+        <img src="images/logo.png" alt="" />
 
-      <Sidebar />
+        {/* <ul style={{ listStyle: 'none', padding: 0, width: '100%' }}>
+          <li style={{ padding: '10px 0', display: 'flex', alignItems: 'center' }}>
+            <span role="img" aria-label="home" style={{ marginRight: '10px' }}>🏠</span>
+            Home
+          </li>
+          <li style={{ padding: '10px 0', display: 'flex', alignItems: 'center' }}>
+            <span role="img" aria-label="teams" style={{ marginRight: '10px' }}>🏃</span>
+            Teams
+          </li>
+          <li style={{ padding: '10px 0', display: 'flex', alignItems: 'center' }}>
+            <span role="img" aria-label="scouting" style={{ marginRight: '10px' }}>⚖️</span>
+            Scouting Comparison
+          </li>
+        </ul> */}
+      </nav>
 
-      <main className="flex-1 p-10">
-        <h1 className="text-3xl font-bold mb-6 text-sky-500 ml-3">Welcome back</h1>
-        <div className="mb-6">
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-[40%] p-2 border rounded-[23px] border-black ml-3"
+      {/* Main Content */}
+      <div style={{ width: '80%', padding: '20px' }}>
+        <div style={{
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          marginBottom: '20px'
+        }}>
+          <h2 className='text-3xl font-bold mb-6 text-blue-500 ml-[50px]'>Welcome back</h2>
+          <img 
+            src="/images/logo.png" 
+            alt="profile" 
+            style={{ width: '40px', height: '40px', borderRadius: '50%' }}
           />
         </div>
-        <TopPlayers />
-        <AvailableTeams />
-      </main>
+
+        {/* Search Bar */}
+        <div style={{ marginBottom: '30px' }}>
+          <input type="text" placeholder='search' className='w-[40%] p-2 border rounded-[18px] border-black ml-[50px]'/>
+        
+        </div>
+
+     
+
+        <section style={{ marginBottom: '40px', marginLeft: '50px', marginTop: '5%'}}>
+          <h3 className='text-3xl font-bold mb-6 text-blue-500'>Top Players</h3>
+          <div style={{ display: 'flex', gap: '11%' }}>
+            {[1, 2, 3, ].map(player => (
+              <div key={player} style={{
+                borderRadius: '30px', 
+                padding: '10px', 
+                border: '1px solid #ccc', 
+                textAlign: 'center', 
+                width: '320px',
+                height: '170px',
+               
+              }}>
+                <div className='flex mt-[30px] ml-[25px]'>
+                <div>
+                <img 
+                  src="images/player.png" 
+                  alt="player" 
+                  style={{ 
+                    width: '70px', 
+                    height: '70px', 
+                  
+                  }} 
+                />
+                </div>
+
+
+                <div className='ml-[20%] '>
+                <h4 className='font-bold text-[20px]'>James Doe</h4>
+                <p className='text-[20px]'>Best striker</p>
+                <p className='text-[20px]'>Mphavu</p>
+                </div>
+
+                </div>
+
+              </div>
+            ))}
+          </div>
+        </section>
+
+
+
+        <section className='ml-[50px] mt-[10%]'>
+          <h3 className='text-3xl font-bold mb-6 text-blue-500'>Available Teams</h3>
+          <div style={{ display: 'flex', gap: '15px' }}>
+            {[1, 2, 3, 4].map(team => (
+              <div key={team} style={{
+                borderRadius: '30px', 
+                padding: '10px', 
+                border: '1px solid #ccc', 
+                textAlign: 'center', 
+                width: '300px'
+              }}>
+            
+                <img src="images/team.png" alt="team" className='w-[120px] ml-[30%]'/>
+               
+                <h4 className='font-bold text-[20px]'>Ligi Ndogo FC</h4>
+                <p className='text-[20px]'>34 Players available</p>
+                <p className='text-[20px]'>Ngong Road</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default Dashboard;

@@ -4,9 +4,8 @@ import Link from 'next/link'
 export default function Player() {
   // Sidebar Component
   const Sidebar = () => (
-    <aside className="w-64 bg-blue-600 text-white p-6">
+    <aside className="w-[16%] bg-[#177BBD] text-white p-6">
       <div className="text-2xl font-bold mb-10">
-        {/* Sp<span className="inline-block">⚽</span>t Us */}
         <img src="images/logo.png" alt="" />
       </div>
       {/* <nav>
@@ -33,9 +32,11 @@ export default function Player() {
 
   // PlayerProfile Component
   const PlayerProfile = () => (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-8 flex items-center justify-between">
+    // <div className="bg-white rounded-lg shadow-md p-6 mb-8 flex items-center justify-between">
+    <div className="bg-white  p-6 mb-8 flex items-center justify-between">
+
       <div className="flex items-center  w-[50%]">
-        <div className="relative">
+        {/* <div className="relative">
           <img
             src="/images/player.png"
             alt="James Doe"
@@ -46,17 +47,60 @@ export default function Player() {
               <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
             </svg>
           </div>
-        </div>
+        </div> */}
+{/* 
         <div className="ml-6">
           <h2 className="text-2xl font-bold">James Doe</h2>
           <p className="text-black">Best striker</p>
           <p className="text-black">Mphavu</p>
-        </div>
+        </div> */}
+
+        <div style={{
+                borderRadius: '30px', 
+                padding: '10px', 
+                border: '1px solid #ccc', 
+                textAlign: 'center', 
+                width: '440px',
+                height: '230px',
+               
+              }}>
+                <div className='flex mt-[40px] ml-[25px] '>
+                <div>
+                <img 
+                  src="images/player.png" 
+                  alt="player" 
+                  style={{ 
+                    width: '150px', 
+                    height: '140px', 
+                  
+                  }} 
+                />
+                </div>
+
+                <div className='ml-[20%] '>
+                <h4 className='font-bold text-[25px]'>James Doe</h4>
+                <p className='text-[25px]'>Best striker</p>
+                <p className='text-[25px]'>Mphavu</p>
+                </div>
+
+                </div>
+              </div>
+
       </div>
       <div>
-        <select className="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <select className="bg-white border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ml-[-95%] text-[24px] font-bold">
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>August</option>
           <option>September</option>
-          {/* Add more months as options */}
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+          
         </select>
       </div>
     </div>
@@ -70,25 +114,26 @@ export default function Player() {
       { date: '12/8/24', name: 'Session 3' },
       { date: '12/8/24', name: 'Session 4' },
       { date: '12/8/24', name: 'Session 5' },
+      { date: '12/8/24', name: 'Session 6' },
     ]
 
     return (
-      <div>
+      <div className='ml-[2%]'>
         <table className="w-[90%]">
           <thead>
-            <tr className="bg-blue-600 text-white">
-              <th className="p-2 text-left">Date</th>
-              <th className="p-2 text-left">Sessions</th>
-              <th className="p-2"></th>
+            <tr className=" text-black ">
+              <th className="p-4 text-left text-[24px]">Date</th>
+              <th className="p-2 text-left text-[24px]">Sessions</th>
+              <th className="p-6"></th>
             </tr>
           </thead>
           <tbody>
             {sessions.map((session, index) => (
-              <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}>
-                <td className="p-2">{session.date}</td>
-                <td className="p-2">{session.name}</td>
+              <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-200'}>
+                <td className="p-5 font-medium text-[18px]">{session.date}</td>
+                <td className="p-2 font-medium text-[18px]">{session.name}</td>
                 <td className="p-2 text-right">
-                  <button className="bg-green-500 text-white px-4 py-1 rounded">View</button>
+                <button className="bg-[#46BC14] text-white px-8 py-1 rounded-[15px] h-[40px] font-medium text-[18px] ">View</button>
                 </td>
               </tr>
             ))}
